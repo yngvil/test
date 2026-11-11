@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nedtrappa</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#1B6B74">
+<meta name="apple-mobile-web-app-title" content="Nedtrappa">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2048%2048%22%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20rx%3D%2211%22%20fill%3D%22%231B6B74%22/%3E%3Cpath%20d%3D%22M8%2016h12v9h11v9h9v6H8z%22%20fill%3D%22%23F7FAFB%22/%3E%3Ccircle%20cx%3D%2225.5%22%20cy%3D%2219.5%22%20r%3D%224.6%22%20fill%3D%22%23F2B33D%22%20stroke%3D%22%2314262E%22%20stroke-width%3D%221.2%22/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAMAAAAKE/YAAAAAwFBMVEX////+///+/v77/f37/P36+/z3+vv2+vv2+fr1+fr0+Pnz+Pnw9vfp8fL6wlXqtk3zsz3ysz3xsz2Js7jvsT2vmFJTkJdTj5ZHiI8qdH0pdH0odHwjcHkfbXYdcHkbb3gebXYbbXYebHUcbHUbbHU9a18ba3Qba3Maa3R4ZjUbanMbZ3AaZW0XaXIXaHESZW8PY20PY2wPYmwOY2wKYGoJYGoqVVMpODQVNj4XKC4VJy4UJy8UJS4TIysRISoGHS3pkvuxAAAD1klEQVR42u3Za3PaOBQGYC+bsCGXGXBsKGmDMXi8tVFSkja2Zcny//9Xe2TSNpMSblEcZed9mWH4+Izm6HIOTvwB4wANNNBAAw000EADDTTQQAMNNNBAAw000EADDTTQQAMNNNBAAw000EADDTTQQP9v0anOR0ITNwoDShSbhjtvRg4nwYLpLKIgiNMPgE6DgGWFEFVVSVEULDTK3oKe75Pf5ChghVCVlEIIKUleZGGQtoW+2SO36a9lXhR6hUvOy5K+uCB3wSZpO+j55/HVzhlff300M6GE4FzVq6iSU6GIbNIGen7z+WKPnI+W08ackbDkdZ0niU9JclWXJa12EbaCvrpwjo92zLEz1GhaZ6oMLuvc9/qruH6iFJdCZYYqZBv6+PRkx5x2NDoNmSBzzRPSeqsM+n0/r0ldGVJvQx+ddHdMb7XSUVEJrnKfxO7gMZ7X97RaCham9qGpoKmeK07KwdNQpZBaqCKwDz2LFlQcZe0/M2u1l6tSVMyE2jBaLzSvkz/MWu3XhC4sRIdFVcrc67uDNepmM7LQMvTdhI6O9Qu9Wmpu5gAxir6f6G24pqJ13L7HZWlkK5pGq1LytdXxWB90Laa2lUdR8TpfbyZ0oot6EdmJ9oAGet1GLFSp8hc3YqI3YhTbd3qIUr145NFFXll45DEpNl8uyrrLZTn9l65xlfdfLmnJgo/1YKL3tJG7xfiDiUnZ3Il/PE3d1YPaSO9ivAnQjUudD543AU1x0EK30iPu227pLkA/9Gitf597LjUuSV1KQz2AcbRuxvXzlJpE3de6rkvf9LMxK1sbW+oSlVbL5OcEgcirZpyepbGV5UGhsm4GHzzxfT1B8JO8bsYehYEb/K3QMZ17esQk61rmec5rIq8GTFFqLzqdsEJpNpcVfXhDFpm5ae9boKmuo0zouakoy2aKV4mCtTTqPRhNSxossoLcSiktzlgQtTRUPxzdzNWDBct0GAuDsLW/L/ZGf/sy/ZXZbDadPEb/fpq5RehPD9+WT3N3d9/kbvkst3Nb0Cedy0/DXTIajl+pNofudv9ydkrHuXy4tgbd2y3nncsf9qB3zJkDNNBAAw000EADDTTQQAMNNNBAAw000EAD/Xbo71+uN2duIfrh/sfmbJ66vwO69/fF5baMb2d2obv/bP+3YPh9ahm62zvbnPOj0dI69H5/SQINNNBAAw000EADDTTQQG9BH5/22s9Z5zXo8ZnzPjm8sY3T69FwNGw/o+HVzfxQdPx1+U65OXjCRJm+U+LXoO0M0EADDTTQQAMNNNBAAw000EADDTTQQL8u/wGw2Dxlch2BAwAAAABJRU5ErkJggg==">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<style>
+:root{
+  --bg:#E8EEF0; --surface:#F7FAFB; --ink:#14262E; --muted:#51666F;
+  --petrol:#1B6B74; --petrol-soft:#A9CBD0; --on-petrol:#FFFFFF;
+  --gold:#F2B33D; --on-gold:#14262E; --gold-ink:#7A4E00; --line:#C5D2D6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E1C22; --surface:#16282F; --ink:#E7EFF1; --muted:#9DB2B9;
+    --petrol:#49AEB8; --petrol-soft:#27505A; --on-petrol:#0E1C22;
+    --gold:#F2B33D; --on-gold:#14262E; --gold-ink:#F2B33D; --line:#2B434C;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E1C22; --surface:#16282F; --ink:#E7EFF1; --muted:#9DB2B9;
+  --petrol:#49AEB8; --petrol-soft:#27505A; --on-petrol:#0E1C22;
+  --gold:#F2B33D; --on-gold:#14262E; --gold-ink:#F2B33D; --line:#2B434C;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Bricolage Grotesque",ui-rounded,"Segoe UI",system-ui,sans-serif;
+  font-size:17px; line-height:1.45; -webkit-text-size-adjust:100%;
+}
+[hidden]{display:none !important}
+main{max-width:30rem; margin:0 auto; padding:1.25rem 1.1rem 3rem}
+h1{font-size:2.6rem; line-height:1; font-weight:800; letter-spacing:-0.03em; margin:0}
+h2{font-size:1.15rem; font-weight:700; margin:0 0 .6rem}
+p{margin:0}
+.lead{color:var(--muted); margin-top:.35rem}
+.brand{display:flex; align-items:center; gap:.7rem}
+.brand svg{flex:none; width:3.1rem; height:3.1rem}
+.logo-bg{fill:var(--petrol)}
+.logo-steps{fill:var(--on-petrol)}
+.logo-dot{fill:var(--gold); stroke:var(--ink); stroke-width:1.2}
+section{margin-top:2.2rem}
+button,input,select,textarea{font:inherit; color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--petrol); outline-offset:2px}
+
+/* Trappa */
+#stair svg{display:block; width:100%; height:auto; margin-top:1rem}
+.col-done{fill:var(--petrol-soft)}
+.col-now{fill:var(--petrol)}
+.col-next{fill:var(--surface); stroke:var(--line); stroke-width:1}
+.lbl{font-size:11px; font-weight:600; text-anchor:middle; fill:var(--muted)}
+.lbl-now{fill:var(--on-petrol); font-weight:800}
+.marker{transition:transform .9s cubic-bezier(.3,1.3,.5,1)}
+.marker circle{fill:var(--gold); stroke:var(--ink); stroke-width:2}
+.prize-mark{fill:var(--gold); stroke:var(--ink); stroke-width:1}
+.low-mark{fill:none; stroke:var(--ink); stroke-width:1.5}
+#legend{font-size:.85rem; color:var(--muted); margin-top:.5rem}
+#progress{margin-top:.5rem; font-weight:600}
+
+/* Tilbud om neste trinn */
+#offer{background:var(--gold); color:var(--on-gold); border-radius:14px; padding:1rem; margin-top:1.4rem}
+#offer p{font-weight:700; font-size:1.1rem; line-height:1.3}
+#offer .row{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.8rem}
+#offer button{border:2px solid var(--on-gold); background:transparent; color:var(--on-gold); border-radius:999px; padding:.55rem .95rem; font-weight:700; min-height:44px}
+#offer button.solid{background:var(--on-gold); color:var(--gold)}
+
+/* I dag */
+.count{display:flex; align-items:baseline; gap:.6rem}
+.count b{font-size:4.4rem; line-height:.95; font-weight:800; letter-spacing:-0.04em; font-variant-numeric:tabular-nums}
+.count span{font-size:1.2rem; color:var(--muted); font-weight:600}
+#slots{display:flex; flex-wrap:wrap; gap:7px; margin-top:.9rem}
+#slots i{width:20px; height:20px; border-radius:50%; border:2px solid var(--petrol)}
+#slots i.used{background:var(--ink); border-color:var(--ink)}
+#slots i.extra{background:var(--muted); border-color:var(--muted); border-radius:4px}
+#status{margin-top:.8rem; min-height:2.9em}
+.actions{display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin-top:1rem}
+.actions button{min-height:64px; border-radius:16px; font-weight:800; font-size:1.15rem; padding:.5rem}
+#btn-resist{background:var(--gold); color:var(--on-gold); border:2px solid var(--gold)}
+#btn-smoke{background:transparent; border:2px solid var(--ink)}
+.actions button:active{transform:translateY(2px)}
+.under{display:flex; justify-content:space-between; gap:1rem; align-items:center; margin-top:.7rem; color:var(--muted); font-size:.95rem; min-height:44px}
+.link{background:none; border:0; padding:.6rem 0; text-decoration:underline; text-underline-offset:3px; color:var(--ink); min-height:44px}
+.link:disabled{color:var(--muted); text-decoration:none; cursor:default}
+#toast{margin-top:.2rem; font-weight:700; color:var(--gold-ink); min-height:1.5em}
+
+/* Uke */
+#week{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(7,1fr); gap:4px}
+#week li{background:var(--surface); border-radius:10px; padding:.5rem .1rem; text-align:center; font-size:.85rem}
+#week li.today{outline:2px solid var(--petrol)}
+#week .d{color:var(--muted)}
+#week .n{font-weight:700; font-variant-numeric:tabular-nums; display:block; margin:.15rem 0}
+#week .s{color:var(--gold-ink); font-weight:700; min-height:1.3em; display:block}
+#week li.blank .n,#week li.blank .s{color:var(--muted); font-weight:400}
+
+/* Så langt */
+dl{display:grid; grid-template-columns:1fr 1fr; gap:1rem .8rem; margin:0}
+dt{color:var(--muted); font-size:.95rem; order:2}
+dd{margin:0; font-size:2rem; font-weight:800; line-height:1.05; letter-spacing:-0.02em; font-variant-numeric:tabular-nums}
+dl div{display:flex; flex-direction:column}
+.hint{color:var(--muted); font-size:.92rem; margin-top:.7rem}
+
+/* Premier */
+#prizes{list-style:none; margin:0; padding:0}
+#prizes li{display:flex; gap:.7rem; align-items:center; padding:.65rem 0; border-bottom:1px solid var(--line)}
+#prizes .step{flex:none; width:2.6rem; height:2.6rem; border-radius:50%; display:grid; place-items:center; font-weight:800; border:2px solid var(--line); color:var(--muted)}
+#prizes li.open .step{background:var(--gold); border-color:var(--gold); color:var(--on-gold)}
+#prizes .txt{flex:1; overflow-wrap:anywhere}
+#prizes .txt small{display:block; color:var(--muted)}
+#prizes li.open .txt small{color:var(--gold-ink); font-weight:700}
+#prizes button{background:none; border:0; color:var(--muted); min-width:44px; min-height:44px; font-size:1.2rem}
+.add{display:grid; grid-template-columns:5.2rem 1fr; gap:.5rem; margin-top:.9rem}
+.add button{grid-column:1 / -1}
+
+/* Skjema */
+label{display:block; font-weight:600; margin-top:1rem}
+label small{display:block; font-weight:400; color:var(--muted)}
+input,select,textarea{width:100%; margin-top:.35rem; background:var(--surface); border:2px solid var(--line); border-radius:10px; padding:.6rem .7rem; min-height:48px}
+textarea{min-height:5.5rem; font-size:.8rem; font-family:ui-monospace,Menlo,Consolas,monospace}
+.btn{display:block; width:100%; min-height:52px; border-radius:14px; border:2px solid var(--ink); background:transparent; font-weight:700; margin-top:.7rem; padding:.5rem .8rem}
+.btn.primary{background:var(--ink); color:var(--bg)}
+.btn.quiet{border-color:var(--line)}
+.err{color:var(--gold-ink); font-weight:700; margin-top:.7rem; min-height:1.4em}
+details{margin-top:2.4rem; border-top:1px solid var(--line); padding-top:.4rem}
+summary{font-weight:700; padding:.8rem 0; cursor:pointer; min-height:44px}
+.two{display:grid; grid-template-columns:1fr 1fr; gap:.6rem}
+#nostorage{background:var(--surface); border:2px solid var(--gold); border-radius:12px; padding:.8rem; margin-top:1rem}
+
+@media (prefers-reduced-motion: reduce){
+  .marker{transition:none}
+  .actions button:active{transform:none}
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect class="logo-bg" width="48" height="48" rx="11"/><path class="logo-steps" d="M8 16h12v9h11v9h9v6H8z"/><circle class="logo-dot" cx="25.5" cy="19.5" r="4.6"/></svg>
+      <h1>Nedtrappa</h1>
+    </div>
+    <p class="lead" id="tagline">Ett trinn av gangen.</p>
+  </header>
+
+  <p id="nostorage" hidden>Denne nettleseren lar ikke siden lagre noe. Det du logger forsvinner når du lukker den. Prøv å åpne siden i en vanlig fane, ikke i privat modus.</p>
+
+  <!-- Første gang -->
+  <section id="setup" hidden>
+    <h2>Sett opp trappa di</h2>
+    <p class="lead">Alt kan endres senere, og alt lagres bare på denne enheten.</p>
+    <label for="s-start">Hvor mange røyker du om dagen nå?
+      <input id="s-start" type="number" inputmode="numeric" min="2" max="60" value="15">
+    </label>
+    <label for="s-goal">Hvor langt ned vil du i første omgang?
+      <small>Null er lov, men det er ikke noe krav.</small>
+      <input id="s-goal" type="number" inputmode="numeric" min="0" max="59" value="3">
+    </label>
+    <label for="s-low">Det laveste du har vært nede på før
+      <small>Valgfritt. Blir merket av i trappa.</small>
+      <input id="s-low" type="number" inputmode="numeric" min="0" max="59" value="4">
+    </label>
+    <label for="s-price">Pris for en 20-pakning, i kroner
+      <input id="s-price" type="number" inputmode="numeric" min="1" max="1000" value="180">
+    </label>
+    <p class="err" id="s-err" role="alert"></p>
+    <button class="btn primary" id="s-go" type="button">Start øverst i trappa</button>
+  </section>
+
+  <div id="app" hidden>
+    <div id="offer" hidden>
+      <p id="offer-text"></p>
+      <div class="row" id="offer-row"></div>
+    </div>
+
+    <section aria-labelledby="h-stair" style="margin-top:1.2rem">
+      <h2 id="h-stair" hidden>Trappa</h2>
+      <div id="stair"></div>
+      <p id="legend"></p>
+      <p id="progress"></p>
+    </section>
+
+    <section aria-labelledby="h-today">
+      <h2 id="h-today">I dag</h2>
+      <p class="count"><b id="n">0</b><span id="of"></span></p>
+      <div id="slots" aria-hidden="true"></div>
+      <p id="status"></p>
+      <div class="actions">
+        <button id="btn-resist" type="button">Sto over</button>
+        <button id="btn-smoke" type="button">Tok en røyk</button>
+      </div>
+      <div class="under">
+        <button class="link" id="btn-undo" type="button">Angre siste</button>
+        <span id="since"></span>
+      </div>
+      <p id="toast" role="status" aria-live="polite"></p>
+    </section>
+
+    <section aria-labelledby="h-week">
+      <h2 id="h-week">Siste sju dager</h2>
+      <ol id="week"></ol>
+    </section>
+
+    <section aria-labelledby="h-total">
+      <h2 id="h-total">Så langt</h2>
+      <dl>
+        <div><dd id="t-stars">0</dd><dt>stjerner</dt></div>
+        <div><dd id="t-resist">0</dd><dt>ganger du sto over</dt></div>
+        <div><dd id="t-saved">0</dd><dt>røyk du ikke tok</dt></div>
+        <div><dd id="t-kr">0 kr</dd><dt>spart</dt></div>
+      </dl>
+      <p class="hint" id="t-hint"></p>
+    </section>
+
+    <section aria-labelledby="h-prizes">
+      <h2 id="h-prizes">Premier</h2>
+      <p class="lead" id="prize-empty">Legg inn noe å glede seg til på et trinn. En venn kan gjerne være den som lover premien.</p>
+      <ul id="prizes"></ul>
+      <div class="add">
+        <select id="p-step" aria-label="Trinn"></select>
+        <input id="p-text" type="text" maxlength="80" placeholder="For eksempel: middag ute" aria-label="Premie">
+        <button class="btn quiet" id="p-add" type="button" style="margin-top:0">Legg til premie</button>
+      </div>
+    </section>
+
+    <details>
+      <summary>Innstillinger</summary>
+      <div class="two">
+        <button class="btn quiet" id="up" type="button">Gå opp et trinn</button>
+        <button class="btn quiet" id="down" type="button">Gå ned et trinn</button>
+      </div>
+      <p class="hint">Å gå opp et trinn er ikke et nederlag. Det er bedre å stå støtt enn å gi seg.</p>
+      <label for="c-goal">Nederste trinn i trappa
+        <input id="c-goal" type="number" inputmode="numeric" min="0">
+      </label>
+      <label for="c-need">Gode dager før du får tilbud om neste trinn
+        <input id="c-need" type="number" inputmode="numeric" min="2" max="14">
+      </label>
+      <label for="c-price">Pris for en 20-pakning, i kroner
+        <input id="c-price" type="number" inputmode="numeric" min="1" max="1000">
+      </label>
+      <button class="btn" id="c-save" type="button">Lagre innstillinger</button>
+      <p class="err" id="c-msg" role="status"></p>
+
+      <label for="backup">Sikkerhetskopi
+        <small>Kopier teksten og ta vare på den, eller lim inn en tidligere kopi for å hente den tilbake.</small>
+        <textarea id="backup" spellcheck="false"></textarea>
+      </label>
+      <div class="two">
+        <button class="btn quiet" id="b-show" type="button">Vis kopi</button>
+        <button class="btn quiet" id="b-load" type="button">Hent tilbake</button>
+      </div>
+      <button class="btn quiet" id="reset" type="button">Slett alt og start på nytt</button>
+      <p class="hint">Et nytt døgn begynner klokka 04, så en sen kveld teller på riktig dag.</p>
+    </details>
+  </div>
+</main>
+
+<script>
+(function(){
+  'use strict';
+  var KEY = 'nedtrappa.v1';
+  var $ = function(id){ return document.getElementById(id); };
+  var S = null, storageOk = true, shownDay = null, toastTimer = null;
+  var DAYS = ['søn','man','tir','ons','tor','fre','lør'];
+  var RESIST_LINES = ['Sto over. Den teller.', 'Suget gikk over uten røyk. Notert.', 'Én til du lot ligge.', 'Der sto du støtt.'];
+
+  function load(){
+    try{ var r = localStorage.getItem(KEY); if(r){ var o = JSON.parse(r); if(valid(o)) return o; } }
+    catch(e){ storageOk = false; }
+    return null;
+  }
+  function save(){
+    try{ localStorage.setItem(KEY, JSON.stringify(S)); storageOk = true; }
+    catch(e){ storageOk = false; }
+    $('nostorage').hidden = storageOk;
+  }
+  function valid(o){
+    return o && o.setup && typeof o.setup.start === 'number' && typeof o.level === 'number' && o.days && Array.isArray(o.prizes);
+  }
+
+  function fmt(d){
+    var m = d.getMonth()+1, day = d.getDate();
+    return d.getFullYear() + '-' + (m<10?'0':'') + m + '-' + (day<10?'0':'') + day;
+  }
+  function dayKey(t){ return fmt(new Date((t || Date.now()) - 4*3600*1000)); }
+  function keyToDate(k){ var p = k.split('-'); return new Date(+p[0], +p[1]-1, +p[2], 12); }
+  function addDays(k, n){ var d = keyToDate(k); d.setDate(d.getDate()+n); return fmt(d); }
+  function nb(n){ return n.toLocaleString('nb-NO'); }
+  function int(id){ var v = parseInt($(id).value, 10); return isNaN(v) ? null : v; }
+
+  function today(){
+    var k = dayKey();
+    if(!S.days[k]){ S.days[k] = {q:S.level, s:[], r:[]}; save(); }
+    return S.days[k];
+  }
+  function stars(d){
+    var n = d.s.length;
+    if(n > d.q) return 0;
+    return (n < d.q || d.q === 0) ? 2 : 1;
+  }
+  function goodDays(){
+    var k = dayKey(), out = [];
+    Object.keys(S.days).sort().forEach(function(key){
+      var d = S.days[key];
+      if(key < k && key >= S.levelSince && d.q === S.level && d.s.length <= d.q) out.push(d);
+    });
+    return out;
+  }
+
+  /* ---------- Trappa ---------- */
+  function stepPos(level, g){
+    var i = S.setup.start - level;
+    return {x: g.pad + i*g.w + g.w/2, y: g.top + i*g.h};
+  }
+  function drawStair(fromLevel){
+    var top = S.setup.start, bottom = S.setup.goal, n = top - bottom + 1;
+    var W = 360, g = {pad:4, top:40};
+    g.w = (W - g.pad*2) / n;
+    g.h = Math.max(5, Math.min(16, 170/n));
+    var H = g.top + n*g.h + 30;
+    var every = n > 16 ? 2 : 1;
+    var prizeSteps = {}; S.prizes.forEach(function(p){ prizeSteps[p.level] = true; });
+    var svg = '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Trapp fra '+top+' til '+bottom+' om dagen. Du står på trinn '+S.level+'.">';
+    var hasPrize = false, hasLow = false;
+    for(var lv = top; lv >= bottom; lv--){
+      var i = top - lv, x = g.pad + i*g.w, y = g.top + i*g.h;
+      var cls = lv > S.level ? 'col-done' : (lv === S.level ? 'col-now' : 'col-next');
+      svg += '<rect class="'+cls+'" x="'+x.toFixed(2)+'" y="'+y.toFixed(2)+'" width="'+(g.w+0.5).toFixed(2)+'" height="'+(H-y).toFixed(2)+'"/>';
+      if(lv === S.level || lv === bottom || lv === top || i % every === 0){
+        svg += '<text class="lbl'+(lv===S.level?' lbl-now':'')+'" x="'+(x+g.w/2).toFixed(2)+'" y="'+(y+15).toFixed(2)+'">'+lv+'</text>';
+      }
+      var my = y - (lv === S.level ? 26 : 8), cx = x + g.w/2;
+      if(prizeSteps[lv]){
+        hasPrize = true;
+        svg += '<path class="prize-mark" d="M'+cx+' '+(my-5)+' l5 5 l-5 5 l-5 -5 z"/>';
+        my -= 13;
+      }
+      if(S.setup.prevLow !== null && lv === S.setup.prevLow && lv !== S.level){
+        hasLow = true;
+        svg += '<circle class="low-mark" cx="'+cx+'" cy="'+my+'" r="4"/>';
+      }
+    }
+    var from = stepPos(fromLevel === undefined ? S.level : fromLevel, g);
+    svg += '<g class="marker" id="marker" style="transform:translate('+from.x+'px,'+(from.y-11)+'px)"><circle r="8"/></g></svg>';
+    $('stair').innerHTML = svg;
+    if(fromLevel !== undefined && fromLevel !== S.level){
+      var to = stepPos(S.level, g);
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){
+        var m = $('marker'); if(m) m.style.transform = 'translate('+to.x+'px,'+(to.y-11)+'px)';
+      }); });
+    }
+    var parts = ['Den gule prikken er deg.'];
+    if(hasPrize) parts.push('Ruter er premier.');
+    if(hasLow) parts.push('Ringen på trinn '+S.setup.prevLow+' er der du har vært før.');
+    $('legend').textContent = parts.join(' ');
+  }
+
+  /* ---------- Tegn alt ---------- */
+  function render(fromLevel){
+    var has = !!S;
+    $('setup').hidden = has; $('app').hidden = !has;
+    $('nostorage').hidden = storageOk;
+    if(!has){ $('tagline').textContent = 'Ett trinn av gangen.'; return; }
+
+    var k = dayKey(), d = today(), n = d.s.length, q = d.q;
+    shownDay = k;
+    $('tagline').textContent = 'Du står på trinn ' + S.level + '. Det betyr opptil ' + S.level + ' om dagen.';
+    drawStair(fromLevel);
+
+    // Fremdrift og tilbud
+    var good = goodDays(), need = S.need;
+    var atGoal = S.level <= S.setup.goal;
+    if(atGoal){
+      $('progress').textContent = 'Du er nederst i trappa. Vil du videre, kan du flytte nederste trinn under Innstillinger.';
+    } else {
+      $('progress').textContent = Math.min(good.length, need) + ' av ' + need + ' gode dager på dette trinnet.';
+    }
+    var ready = !atGoal && good.length >= need && S.snooze !== k;
+    $('offer').hidden = !ready;
+    if(ready){
+      var last = good.slice(-need), mx = 0;
+      last.forEach(function(x){ if(x.s.length > mx) mx = x.s.length; });
+      var target = Math.max(S.setup.goal, Math.min(S.level-1, mx));
+      $('offer-text').textContent = 'Du har holdt kvoten ' + good.length + ' dager på trinn ' + S.level + '. Klar for å gå ned?';
+      var row = $('offer-row'); row.innerHTML = '';
+      row.appendChild(mkBtn('Gå ned til trinn ' + target, 'solid', function(){ stepTo(target); }));
+      if(target < S.level-1) row.appendChild(mkBtn('Bare ett trinn ned', '', function(){ stepTo(S.level-1); }));
+      row.appendChild(mkBtn('Bli her litt til', '', function(){ S.snooze = k; save(); render(); }));
+    }
+
+    // I dag
+    $('n').textContent = n;
+    $('of').textContent = 'av ' + q + ' i dag';
+    var slots = '';
+    for(var i=0;i<Math.max(q,n);i++) slots += '<i class="'+(i<n ? (i<q?'used':'extra') : '')+'"></i>';
+    $('slots').innerHTML = slots;
+    var st;
+    if(n < q) st = (q-n) + ' igjen av kvoten. Ender dagen under ' + q + ', får du to stjerner.';
+    else if(n === q) st = q === 0 ? 'Null i dag. Ender dagen slik, får du to stjerner.' : 'Akkurat på kvoten. Stopper du her, får du en stjerne.';
+    else st = (n-q) + ' over kvoten i dag. Det skjer. Du blir stående på trinnet, og i morgen teller på nytt.';
+    $('status').textContent = st;
+    $('btn-undo').disabled = !(n || d.r.length);
+    renderSince();
+
+    // Uke
+    var wk = '';
+    for(var j=6;j>=0;j--){
+      var key = addDays(k, -j), rec = S.days[key], isToday = j === 0;
+      var name = isToday ? 'i dag' : DAYS[keyToDate(key).getDay()];
+      if(!rec){ wk += '<li class="blank"><span class="d">'+name+'</span><span class="n">–</span><span class="s"></span></li>'; continue; }
+      var mark = isToday ? '' : (stars(rec) === 2 ? '★★' : stars(rec) === 1 ? '★' : '');
+      wk += '<li'+(isToday?' class="today"':'')+'><span class="d">'+name+'</span><span class="n">'+rec.s.length+'/'+rec.q+'</span><span class="s">'+mark+'</span></li>';
+    }
+    $('week').innerHTML = wk;
+
+    // Så langt
+    var tStars = 0, tRes = 0, tSaved = 0, done = 0;
+    Object.keys(S.days).forEach(function(key){
+      var r = S.days[key]; tRes += r.r.length;
+      if(key < k){ done++; tStars += stars(r); tSaved += Math.max(0, S.setup.start - r.s.length); }
+    });
+    $('t-stars').textContent = nb(tStars);
+    $('t-resist').textContent = nb(tRes);
+    $('t-saved').textContent = nb(tSaved);
+    $('t-kr').textContent = nb(Math.round(tSaved * S.setup.price / 20)) + ' kr';
+    $('t-hint').textContent = done ? 'Sammenlignet med ' + S.setup.start + ' om dagen. Dagen i dag kommer med i morgen.'
+                                   : 'Stjerner og sparte kroner regnes ut når den første dagen er over.';
+
+    // Premier
+    var ul = $('prizes'); ul.innerHTML = '';
+    S.prizes.slice().sort(function(a,b){ return b.level - a.level; }).forEach(function(p){
+      var li = document.createElement('li'), open = S.level <= p.level;
+      if(open) li.className = 'open';
+      var step = document.createElement('span'); step.className = 'step'; step.textContent = p.level;
+      var txt = document.createElement('span'); txt.className = 'txt'; txt.textContent = p.text;
+      var sm = document.createElement('small');
+      sm.textContent = open ? 'Låst opp' : (S.level - p.level) + ' trinn igjen';
+      txt.appendChild(sm);
+      var del = document.createElement('button'); del.type = 'button'; del.textContent = '×';
+      del.setAttribute('aria-label', 'Fjern premien «' + p.text + '»');
+      del.onclick = function(){ S.prizes = S.prizes.filter(function(x){ return x.id !== p.id; }); save(); render(); };
+      li.appendChild(step); li.appendChild(txt); li.appendChild(del); ul.appendChild(li);
+    });
+    $('prize-empty').hidden = S.prizes.length > 0;
+    var sel = $('p-step'), keep = sel.value, opts = '';
+    for(var lv = S.setup.start-1; lv >= S.setup.goal; lv--) opts += '<option value="'+lv+'">Trinn '+lv+'</option>';
+    sel.innerHTML = opts;
+    if(keep && sel.querySelector('option[value="'+keep+'"]')) sel.value = keep;
+    else if(S.level-1 >= S.setup.goal) sel.value = String(S.level-1);
+
+    // Innstillinger
+    $('c-goal').value = S.setup.goal; $('c-goal').max = S.level;
+    $('c-need').value = S.need; $('c-price').value = S.setup.price;
+    $('up').disabled = S.level >= S.setup.start;
+    $('down').disabled = S.level <= S.setup.goal;
+  }
+
+  function mkBtn(text, cls, fn){
+    var b = document.createElement('button'); b.type = 'button'; b.textContent = text;
+    if(cls) b.className = cls; b.onclick = fn; return b;
+  }
+  function renderSince(){
+    if(!S){ return; }
+    var last = 0;
+    Object.keys(S.days).forEach(function(key){ S.days[key].s.forEach(function(t){ if(t > last) last = t; }); });
+    if(!last){ $('since').textContent = ''; return; }
+    var min = Math.max(0, Math.floor((Date.now()-last)/60000)), h = Math.floor(min/60), dd = Math.floor(h/24);
+    var txt = dd >= 1 ? dd + ' d ' + (h%24) + ' t' : h >= 1 ? h + ' t ' + (min%60) + ' min' : min + ' min';
+    $('since').textContent = txt + ' siden sist';
+  }
+  function toast(msg){
+    $('toast').textContent = msg;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ $('toast').textContent = ''; }, 4000);
+  }
+
+  function stepTo(level){
+    var from = S.level;
+    level = Math.max(S.setup.goal, Math.min(S.setup.start, level));
+    if(level === from) return;
+    S.level = level; S.levelSince = dayKey(); S.snooze = null;
+    today().q = level;
+    save(); render(from);
+    var won = S.prizes.filter(function(p){ return p.level < from && p.level >= level; });
+    if(level < from) toast(won.length ? 'Trinn ' + level + '. Du har låst opp: ' + won.map(function(p){ return p.text; }).join(', ') + '.' : 'Nede på trinn ' + level + '. Godt gått.');
+    else toast('Tilbake på trinn ' + level + '. Stå støtt her en stund.');
+  }
+
+  /* ---------- Hendelser ---------- */
+  $('s-go').onclick = function(){
+    var start = int('s-start'), goal = int('s-goal'), low = int('s-low'), price = int('s-price'), err = '';
+    if(start === null || start < 2 || start > 60) err = 'Skriv et tall mellom 2 og 60 for hvor mange du røyker nå.';
+    else if(goal === null || goal < 0 || goal >= start) err = 'Målet må være lavere enn ' + start + '.';
+    else if(price === null || price < 1) err = 'Skriv inn hva en pakke koster.';
+    if(low !== null && (low < goal || low >= start)) low = null;
+    $('s-err').textContent = err;
+    if(err) return;
+    var k = dayKey();
+    S = {v:1, setup:{start:start, goal:goal, prevLow:low, price:price, created:k}, level:start, levelSince:k, need:5, snooze:null, days:{}, prizes:[]};
+    save(); render(); window.scrollTo(0,0);
+  };
+  $('btn-smoke').onclick = function(){
+    var d = today(); d.s.push(Date.now()); save(); render();
+    toast(d.s.length <= d.q ? 'Notert.' : 'Notert. I morgen teller på nytt.');
+  };
+  $('btn-resist').onclick = function(){
+    var d = today(); d.r.push(Date.now()); save(); render();
+    toast(RESIST_LINES[(d.r.length-1) % RESIST_LINES.length]);
+  };
+  $('btn-undo').onclick = function(){
+    var d = today(), ls = d.s.length ? d.s[d.s.length-1] : 0, lr = d.r.length ? d.r[d.r.length-1] : 0;
+    if(!ls && !lr) return;
+    if(ls > lr) d.s.pop(); else d.r.pop();
+    save(); render(); toast('Angret.');
+  };
+  $('p-add').onclick = function(){
+    var text = $('p-text').value.trim(), lv = parseInt($('p-step').value, 10);
+    if(!text || isNaN(lv)){ $('p-text').focus(); return; }
+    S.prizes.push({id:Date.now() + '-' + Math.floor(Math.random()*1e6), level:lv, text:text});
+    $('p-text').value = ''; save(); render();
+  };
+  $('up').onclick = function(){ stepTo(S.level+1); window.scrollTo(0,0); };
+  $('down').onclick = function(){ stepTo(S.level-1); window.scrollTo(0,0); };
+  $('c-save').onclick = function(){
+    var goal = int('c-goal'), need = int('c-need'), price = int('c-price');
+    if(goal === null || goal < 0 || goal > S.level){ $('c-msg').textContent = 'Nederste trinn må være mellom 0 og ' + S.level + '.'; return; }
+    if(need === null || need < 2 || need > 14){ $('c-msg').textContent = 'Velg mellom 2 og 14 gode dager.'; return; }
+    if(price === null || price < 1){ $('c-msg').textContent = 'Skriv inn hva en pakke koster.'; return; }
+    S.setup.goal = goal; S.need = need; S.setup.price = price;
+    S.prizes = S.prizes.filter(function(p){ return p.level >= goal; });
+    save(); render(); $('c-msg').textContent = 'Lagret.';
+  };
+  $('b-show').onclick = function(){
+    var t = $('backup'); t.value = JSON.stringify(S); t.focus(); t.select();
+    try{ navigator.clipboard.writeText(t.value).then(function(){ $('c-msg').textContent = 'Kopiert.'; }, function(){ $('c-msg').textContent = 'Merk teksten og kopier den.'; }); }
+    catch(e){ $('c-msg').textContent = 'Merk teksten og kopier den.'; }
+  };
+  $('b-load').onclick = function(){
+    try{
+      var o = JSON.parse($('backup').value);
+      if(!valid(o)) throw 0;
+      S = o; save(); render(); $('c-msg').textContent = 'Hentet tilbake.'; $('backup').value = '';
+    }catch(e){ $('c-msg').textContent = 'Fant ingen gyldig kopi i tekstfeltet. Lim inn hele teksten og prøv igjen.'; }
+  };
+  var resetArmed = false;
+  $('reset').onclick = function(){
+    if(!resetArmed){
+      resetArmed = true; this.textContent = 'Trykk en gang til for å slette alt';
+      var b = this; setTimeout(function(){ resetArmed = false; b.textContent = 'Slett alt og start på nytt'; }, 5000);
+      return;
+    }
+    resetArmed = false; this.textContent = 'Slett alt og start på nytt';
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    S = null; render(); window.scrollTo(0,0);
+  };
+
+  function tick(){
+    if(!S) return;
+    if(dayKey() !== shownDay) render(); else renderSince();
+  }
+  setInterval(tick, 30000);
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden) tick(); });
+
+  S = load();
+  render();
+})();
+</script>
+</body>
+</html>
